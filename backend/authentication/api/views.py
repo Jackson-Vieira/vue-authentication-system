@@ -34,19 +34,19 @@ def current_user_detail(request):
     return Response(serializer.data)
 
 
-@api_view(['POST'])
-def login(request):
-    data = request.data # { username and password }
-    user = authenticate(username=data.get("username"),
-                        password=data.get("password"))
-    if user is not None:
+# @api_view(['POST'])
+# def login(request):
+#     data = request.data # { username and password }
+#     user = authenticate(username=data.get("username"),
+#                         password=data.get("password"))
+#     if user is not None:
 
-        login(request._request, user)
-        return HttpResponse("OK")
+#         login(request._request, user)
+#         return HttpResponse("OK")
 
-    return HttpResponse("OK")
+#     return HttpResponse("OK")
 
 
-def logout(request):
-    logout(request)
-    return Response('')
+# def logout(request):
+#     logout(request)
+#     return Response('')
